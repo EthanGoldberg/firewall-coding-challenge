@@ -1,0 +1,7 @@
+inbound,tcp,20-40,0.0.0.0
+inbound,tcp,35-45,1.1.1.1
+inbound,tcp,20-30,2.2.2.2
+inbound,tcp,25-30,3.3.3.3
+inbound,tcp,38,4.4.4.4
+inbound,tcp,45,5.5.5.5
+inbound,tcp,30-32,6.6.6.6
