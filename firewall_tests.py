@@ -1,7 +1,7 @@
 from firewall import Firewall
 
-print("PROVIDED")
 # Check provided tests
+print("PROVIDED")
 fw_provided = Firewall('provided_example.csv')
 assert(fw_provided.accept_packet("inbound", "tcp", 80, "192.168.1.2")) # matches first rule
 assert(fw_provided.accept_packet("inbound", "udp", 53, "192.168.2.1")) # matches third rule
@@ -11,8 +11,9 @@ assert(fw_provided.accept_packet("inbound", "tcp", 81, "192.168.1.2")==False)
 assert(fw_provided.accept_packet("inbound", "udp", 24, "52.12.48.92")==False)
 #false
 
-print("\nFULL RANGE")
+
 # Check if a full range (always returns true)
+print("\nFULL RANGE")
 fw_full_range = Firewall('full_range.csv')
 assert(fw_full_range.accept_packet("inbound", "tcp", 1, "0.0.0.0"))
 assert(fw_full_range.accept_packet("inbound", "tcp", 22, "125.255.35.8"))
@@ -25,8 +26,8 @@ assert(fw_full_range.accept_packet("outbound", "tcp", 22, "125.255.35.8")==False
 assert(fw_full_range.accept_packet("outbound", "udp", 65535, "255.255.255.255")==False)
 
 
+# Tests every input for a complex, overlapping rule structure
 print("\nOVERLAPS")
-
 fw_many_overlaps = Firewall('overlaps.csv')
 
 # All ranges
